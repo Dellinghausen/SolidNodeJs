@@ -14,6 +14,10 @@ export class GetUserController {
             let user
             if(GetUserByEmailRequest.email){
                 user = await this.GetUserUseCase.getByEmail(GetUserByEmailRequest)
+            } else {
+                return response.status(400).json({
+                    message: 'E-mail required!'
+                })
             }
 
             return response.status(200).json(user).send()
