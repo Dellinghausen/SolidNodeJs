@@ -1,5 +1,6 @@
 import { getConnection } from "typeorm";
 import { User } from "../../entities/User";
+import { IGetUserByEmailResponseDTO } from "../../useCases/GetUser/GetUserDTO";
 import { IUsersRepository } from "../IUsersRepository";
 
 export class TypeOrmUsersRepository implements IUsersRepository {
