@@ -9,11 +9,7 @@ export class GetUserUseCase {
     async getByEmail(data: IGetUserByEmailRequestDTO): Promise<IGetUserByEmailResponseDTO> {
         const user = await this.usersRepository.findByEmail(data.email)
 
-        const userByEmailResponse = {} as IGetUserByEmailResponseDTO;
-
-        userByEmailResponse.id = user.id
-        userByEmailResponse.email = user.email
-        userByEmailResponse.name = user.name
+        const userByEmailResponse = user as IGetUserByEmailResponseDTO;
 
         return userByEmailResponse
     }

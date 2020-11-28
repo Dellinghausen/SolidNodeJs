@@ -17,7 +17,8 @@ export class User {
     public email: string
 
     @Column({
-        length: 100
+        length: 100,
+        select: false
     })
     public password: string
 

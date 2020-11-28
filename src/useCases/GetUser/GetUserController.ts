@@ -9,7 +9,6 @@ export class GetUserController {
 
     async handle(request: Request, response: Response): Promise<Response> {
         const GetUserByEmailRequest = request.query as unknown as IGetUserByEmailRequestDTO
-
         try {
             let user
             if(GetUserByEmailRequest.email){
